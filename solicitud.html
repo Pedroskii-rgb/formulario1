@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--ALMO-->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reporte de Equipo Telecontrolado Dañado</title>
+
+    <link rel="preload" href="css/normalize.css" as="style" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="preload" href="css/styles.css" as="style" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <script src="js/app.js"></script>
+    <script src="js/jspdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="titulo">
+        Reporte de Equipo Telecontrolado Dañado <span>CFE distribución</span>
+      </h1>
+    </header>
+
+    <!--Empieza seccion de formualrio-->
+    <main class="contenedor sombra">
+      <section>
+        <form id="form" class="formulario">
+          <fieldset>
+            <legend>Datos generales</legend>
+            <!-----------------------------------------------------------------------
+                -----------------------------------------------------------------------
+                ---------------------Seccion 1 del formulario-------------------------->
+            <div class="contenedor-campos">
+              <!--Empieza div de primer campo para colocar un dato-->
+              <div class="campo">
+                <label for="zona">Zona donde se encuentra el equipo</label>
+                <select id="zona">
+                  <option value="">Seleccione una zona</option>
+                  <option value="misantla">Misantla</option>
+                  <option value="martinez">Martínez de la Torre</option>
+                  <option value="tlapacoyan">Tlapacoyan</option>
+                  <option value="teziutlan">Teziutlán</option>
+                  <option value="perote">Perote</option>
+                  <option value="zacapoaxtla">Zacapoaxtla</option>
+                  <option value="tzt">S.E. TZT</option>
+                  <option value="mtz">S.E. MTZ</option>
+                </select>
+              </div>
+              <!---------------------------------------------------------------------------------------------------------->
+
+              <div class="campo">
+                <label for="area">AREA</label>
+                <input type="text" id="area" required />
+              </div>
+
+              <div class="campo">
+                <label for="circuito">Circuito</label>
+                <input type="text" id="circuito" required />
+              </div>
+
+              <div class="campo">
+                <label for="red">Operacion en red o alim.</label>
+                <input type="text" id="red" required />
+              </div>
+
+              <div class="campo">
+                <label for="direccion">Direccion</label>
+                <input type="text" id="direccion" required />
+              </div>
+              <!--Termina seccion de input-->
+              <div class="campo">
+                <label for="colonia">colonia</label>
+                <input type="text" id="colonia" />
+              </div>
+              <!--Termina seccion de input-->
+              <div class="campo">
+                <label for="poblacion">Poblacion</label>
+                <input type="text" id="poblacion" />
+              </div>
+              <!--Termina seccion de input-->
+              <div class="campo">
+                <label for="clave">Clave del equipo</label>
+                <input type="text" id="clave" />
+              </div>
+              <!--Termina seccion de input-->
+              <div class="campo">
+                <label for="ucm">Dirreción en UCM</label>
+                <input type="text" id="ucm" />
+              </div>
+              <!--Termina seccion de input-->
+              <div class="campo">
+                <label for="numsiad">Numero economico SIAD</label>
+                <input type="text" id="numsiad" />
+              </div>
+              <!--Termina seccion de input-->
+              <div class="campo">
+                <label for="utrsiad">Utr SIAD</label>
+                <input type="text" id="utrsiad" />
+              </div>
+              <!--Termina seccion de input-->
+              <div class="campo">
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" />
+              </div>
+              <!--Termina seccion de input-->
+              <div class="campo">
+                <label for="fechinst">Fecha de instalación</label>
+                <input type="date" id="fechinst" />
+              </div>
+              <!--Termina seccion de input-->
+              <div class="campo">
+                <label for="capin">Capacidad interruptiva</label>
+                <input type="text" id="capin" />
+              </div>
+              <!--Termina seccion de input-->
+              <div class="campo">
+                <label for="noin">NO. de serie interruptor</label>
+                <input type="text" id="noin" />
+              </div>
+              <!--Termina seccion de input-->
+              <div class="campo">
+                <label for="nocon">NO. de serie control</label>
+                <input type="text" id="nocon" />
+              </div>
+              <!--Termina seccion de input-->
+              <div class="campo">
+                <label for="nopedido">No. de contrato o pedido</label>
+                <input type="text" id="nopedido" />
+              </div>
+              <!--Termina seccion de input-->
+              <!---------------------------------------------------->
+              <span class=""></span>
+              <div class="" style="width: 0%; height: 0px">
+                <canvas
+                  id="signature-canvas"
+                  style="border: 1px dashed red; width: 0%; height: 0px"
+                ></canvas>
+              </div>
+              <!---------------------------------------------------->
+            </div>
+            <!-----------------------------------------------------------------------
+                -----------------------------------------------------------------------
+                ---------------------Seccion 2 del formulario-------------------------->
+            <div class="sec2">
+              <h3>Equipos reparados</h3>
+              <div class="contenedor-campos2">
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="" class="">Esta dañado por primera vez</label>
+                  <div class="">
+                    <label for="dañado-si" class="">
+                      <input
+                        type="radio"
+                        name="dañado"
+                        class=""
+                        id="dañado-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="dañado-no" class="">
+                      <input
+                        type="radio"
+                        name="dañado"
+                        class=""
+                        id="dañado-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                </div>
+                <!--Termiina bloque seccion-->
+                <!--------------------------------------------------------------------------------------->
+                <div class="campo-e">
+                  <label for="taller">Taller donde se reparo</label>
+                  <input type="text" id="taller" required />
+                </div>
+                <!--Termina seccion de introducir datos-->
+                <div class="campo">
+                  <label for="fecharep">Fecha de la reparación</label>
+                  <input type="date" id="fecharep" required />
+                </div>
+                <!--Termina seccion de introducir datos-->
+                <div class="campo">
+                  <label for="ncontrato">No. de contrato</label>
+                  <input type="text" id="ncontrato" required />
+                </div>
+                <!--Termina seccion de introducir datos-->
+                <div class="campo">
+                  <label for="partes">Partes reparadas</label>
+                  <input type="text" id="partes" required />
+                </div>
+                <!--Termina seccion de introducir datos-->
+                <div class="campo">
+                  <label for="garantia">Es reparacion con garantia</label>
+                  <select id="garantia">
+                    <option value="">Seleccione</option>
+                    <option value="si">SI</option>
+                    <option value="no">NO</option>
+                  </select>
+                </div>
+                <!--Termina seccion de introducir datos-->
+              </div>
+            </div>
+            <!-----------------------------------------------------------------------
+                -----------------------------------------------------------------------
+                ---------------------Seccion 3 del formulario-------------------------->
+            <div class="sec2">
+              <h3>Datos y causa del daño</h3>
+              <div class="contenedor-campos3">
+                <div class="campo">
+                  <!-------------------------------->
+                  <label for="fechadaño">Fecha del daño</label>
+                  <input type="date" id="fechadaño" required />
+                </div>
+                <!--Termina seccion de introducir datos-->
+                <div class="campo">
+                  <label for="horadaño">Hora del daño</label>
+                  <input type="time" id="horadaño" required />
+                </div>
+                <!--Termina seccion de introducir datos-->
+                <div class="sec2">
+                  <h3>Estado del tiempo</h3>
+                  <div class="contenedor-campos4">
+                    <!--Empieza CONTENIDO de si/no-->
+                    <div class="campo">
+                      <label for="lluvia" class="">LLuvia</label>
+                      <div class="">
+                        <label for="lluvia-si" class="">
+                          <input
+                            type="radio"
+                            name="lluvia"
+                            class=""
+                            id="lluvia-si"
+                            value="1"
+                          />
+                          Si</label
+                        >
+                      </div>
+                      <!--Termina seccion si-->
+                      <div class="">
+                        <label for="lluvia-no" class="">
+                          <input
+                            type="radio"
+                            name="lluvia"
+                            class=""
+                            id="lluvia-no"
+                            value="0"
+                            checked
+                          />
+                          No</label
+                        >
+                      </div>
+                      <!--termina seccion no-->
+                    </div>
+                    <!--Empieza CONTENIDO de si/no-->
+                    <div class="campo">
+                      <label for="" class="">Vientos</label>
+                      <div class="">
+                        <label for="vientos-si" class="">
+                          <input
+                            type="radio"
+                            name="vientos"
+                            class=""
+                            id="vientos-si"
+                            value="1"
+                          />
+                          Si</label
+                        >
+                      </div>
+                      <!--Termina seccion si-->
+                      <div class="">
+                        <label for="vientos-no" class="">
+                          <input
+                            type="radio"
+                            name="vientos"
+                            class=""
+                            id="vientos-no"
+                            value="0"
+                            checked
+                          />
+                          No</label
+                        >
+                      </div>
+                      <!--termina seccion no-->
+                    </div>
+                    <!--Empieza CONTENIDO de si/no-->
+                    <div class="campo">
+                      <label for="" class="">Neblina</label>
+                      <div class="">
+                        <label for="neblina-si" class="">
+                          <input
+                            type="radio"
+                            name="neblina"
+                            class=""
+                            id="neblina-si"
+                            value="1"
+                          />
+                          Si</label
+                        >
+                      </div>
+                      <!--Termina seccion si-->
+                      <div class="">
+                        <label for="neblina-no" class="">
+                          <input
+                            type="radio"
+                            name="neblina"
+                            class=""
+                            id="neblina-no"
+                            value="0"
+                            checked
+                          />
+                          No</label
+                        >
+                      </div>
+                      <!--termina seccion no-->
+                    </div>
+                    <!--Empieza CONTENIDO de si/no-->
+                    <div class="campo">
+                      <label for="" class="">Polvos</label>
+                      <div class="">
+                        <label for="polvos-si" class="">
+                          <input
+                            type="radio"
+                            name="polvos"
+                            class=""
+                            id="polvos-si"
+                            value="1"
+                          />
+                          Si</label
+                        >
+                      </div>
+                      <!--Termina seccion si-->
+                      <div class="">
+                        <label for="polvos-no" class="">
+                          <input
+                            type="radio"
+                            name="polvos"
+                            class=""
+                            id="polvos-no"
+                            value="0"
+                            checked
+                          />
+                          No</label
+                        >
+                      </div>
+                      <!--termina seccion no-->
+                    </div>
+                    <!--Empieza CONTENIDO de si/no-->
+                    <div class="campo">
+                      <label for="" class="">Nublado</label>
+                      <div class="">
+                        <label for="nublado-si" class="">
+                          <input
+                            type="radio"
+                            name="nublado"
+                            class=""
+                            id="nublado-si"
+                            value="1"
+                          />
+                          Si</label
+                        >
+                      </div>
+                      <!--Termina seccion si-->
+                      <div class="">
+                        <label for="nublado-no" class="">
+                          <input
+                            type="radio"
+                            name="nublado"
+                            class=""
+                            id="nublado-no"
+                            value="0"
+                            checked
+                          />
+                          No</label
+                        >
+                      </div>
+                      <!--termina seccion no-->
+                    </div>
+                    <!--Empieza CONTENIDO de si/no-->
+                    <div class="campo">
+                      <label for="" class="">Frente Frío</label>
+                      <div class="">
+                        <label for="frio-si" class="">
+                          <input
+                            type="radio"
+                            name="frio"
+                            class=""
+                            id="frio-si"
+                            value="1"
+                          />
+                          Si</label
+                        >
+                      </div>
+                      <!--Termina seccion si-->
+                      <div class="">
+                        <label for="frio-no" class="">
+                          <input
+                            type="radio"
+                            name="frio"
+                            class=""
+                            id="frio-no"
+                            value="0"
+                            checked
+                          />
+                          No</label
+                        >
+                      </div>
+                      <!--termina seccion no-->
+                    </div>
+                    <!--Empieza CONTENIDO de si/no-->
+                    <div class="campo">
+                      <label for="" class="">Lluvia y descargas</label>
+                      <div class="">
+                        <label for="descargas-si" class="">
+                          <input
+                            type="radio"
+                            name="descargas"
+                            class=""
+                            id="descargas-si"
+                            value="1"
+                          />
+                          Si</label
+                        >
+                      </div>
+                      <!--Termina seccion si-->
+                      <div class="">
+                        <label for="descargas-no" class="">
+                          <input
+                            type="radio"
+                            name="descargas"
+                            class=""
+                            id="descargas-no"
+                            value="0"
+                            checked
+                          />
+                          No</label
+                        >
+                      </div>
+                      <!--termina seccion no-->
+                    </div>
+                    <!--Empieza CONTENIDO de si/no-->
+                    <div class="campo">
+                      <label for="" class="">Únicamente descargas</label>
+                      <div class="">
+                        <label for="udes-si" class="">
+                          <input
+                            type="radio"
+                            name="udes"
+                            class=""
+                            id="udes-si"
+                            value="1"
+                          />
+                          Si</label
+                        >
+                      </div>
+                      <!--Termina seccion si-->
+                      <div class="">
+                        <label for="udes-no" class="">
+                          <input
+                            type="radio"
+                            name="udes"
+                            class=""
+                            id="udes-no"
+                            value="0"
+                            checked
+                          />
+                          No</label
+                        >
+                      </div>
+                      <!--termina seccion no-->
+                    </div>
+                    <!--Empieza CONTENIDO de si/no-->
+                    <div class="campo">
+                      <label for="" class="">Humos</label>
+                      <div class="">
+                        <label for="humos-si" class="">
+                          <input
+                            type="radio"
+                            name="humos"
+                            class=""
+                            id="humos-si"
+                            value="1"
+                          />
+                          Si</label
+                        >
+                      </div>
+                      <!--Termina seccion si-->
+                      <div class="">
+                        <label for="-no" class="">
+                          <input
+                            type="radio"
+                            name="humos"
+                            class=""
+                            id="humos-no"
+                            value="0"
+                            checked
+                          />
+                          No</label
+                        >
+                      </div>
+                      <!--termina seccion no-->
+                    </div>
+                    <!--Empieza CONTENIDO de si/no-->
+                    <div class="campo">
+                      <label for="" class="">Despejado</label>
+                      <div class="">
+                        <label for="despejado-si" class="">
+                          <input
+                            type="radio"
+                            name="despejado"
+                            class=""
+                            id="despejado-si"
+                            value="1"
+                          />
+                          Si</label
+                        >
+                      </div>
+                      <!--Termina seccion si-->
+                      <div class="">
+                        <label for="despejado-no" class="">
+                          <input
+                            type="radio"
+                            name="despejado"
+                            class=""
+                            id="despejado-no"
+                            value="0"
+                            checked
+                          />
+                          No</label
+                        >
+                      </div>
+                      <!--termina seccion no-->
+                    </div>
+                    <!--Empieza CONTENIDO de si/no-->
+                    <div class="campo">
+                      <label for="" class="">Hubo sismo</label>
+                      <div class="">
+                        <label for="sismo-si" class="">
+                          <input
+                            type="radio"
+                            name="sismo"
+                            class=""
+                            id="sismo-si"
+                            value="1"
+                          />
+                          Si</label
+                        >
+                      </div>
+                      <!--Termina seccion si-->
+                      <div class="">
+                        <label for="sismo-no" class="">
+                          <input
+                            type="radio"
+                            name="sismo"
+                            class=""
+                            id="sismo-no"
+                            value="0"
+                            checked
+                          />
+                          No</label
+                        >
+                      </div>
+                      <!--termina seccion no-->
+                    </div>
+                    <!--Empieza CONTENIDO de si/no-->
+                    <div class="campo">
+                      <label for="" class="">Huracán</label>
+                      <div class="">
+                        <label for="uracan-si" class="">
+                          <input
+                            type="radio"
+                            name="uracan"
+                            class=""
+                            id="uracan-si"
+                            value="1"
+                          />
+                          Si</label
+                        >
+                      </div>
+                      <!--Termina seccion si-->
+                      <div class="">
+                        <label for="uracan-no" class="">
+                          <input
+                            type="radio"
+                            name="uracan"
+                            class=""
+                            id="uracan-no"
+                            value="0"
+                            checked
+                          />
+                          No</label
+                        >
+                      </div>
+                      <!--termina seccion no-->
+                    </div>
+                  </div>
+                </div>
+                <!--Termina seccion de introducir datos-->
+              </div>
+              <div class="contenedor-campos5">
+                <div class="campo">
+                  <label for="dañosis">Daño durante maniobras en sistema</label>
+                  <input type="text" id="dañosis" required />
+                </div>
+                <div class="campo">
+                  <label for="dañolinea">Daño encontrado en la línea</label>
+                  <input type="text" id="dañolinea" required />
+                </div>
+                <div class="campo">
+                  <label for="dañocontrol">Daño en el equipo o control</label>
+                  <input type="text" id="dañocontrol" required />
+                </div>
+              </div>
+            </div>
+            <!-----------------------------------------------------------------------
+                -----------------------------------------------------------------------
+                ---------------------Seccion 4 del formulario-------------------------->
+            <div class="sec2">
+              <h3>Observaciones en el interruptor</h3>
+              <!--Empieza seccion de introducir datos-->
+              <div class="contenedor-campos6">
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="dtanque" class="">Defromación en tanque</label>
+                  <div class="">
+                    <label for="dtanque-si" class="">
+                      <input
+                        type="radio"
+                        name="dtanque"
+                        class=""
+                        id="dtanque-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="dtanque-no" class="">
+                      <input
+                        type="radio"
+                        name="dtanque"
+                        class=""
+                        id="dtanque-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="sf6" class="">Fugó SF6</label>
+                  <div class="">
+                    <label for="sf6-si" class="">
+                      <input
+                        type="radio"
+                        name="sf6"
+                        class=""
+                        id="sf6-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="sf6-no" class="">
+                      <input
+                        type="radio"
+                        name="sf6"
+                        class=""
+                        id="sf6-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo2">
+                  <label>Explotó apartarrayos</label>
+                  <div class="">
+                    <label for="opcionSi">
+                      <input
+                        type="radio"
+                        name="opcion"
+                        value="si"
+                        id="opcionSi"
+                      />
+                      Sí</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="opcionNo">
+                      <input
+                        type="radio"
+                        name="opcion"
+                        value="no"
+                        id="opcionNo"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo2">
+                  <label for="selectOpciones">Seleccione fase</label>
+                  <select id="selectOpciones" disabled>
+                    <option value="FA">FA</option>
+                    <option value="FB">FB</option>
+                    <option value="FC">FC</option>
+                  </select>
+                </div>
+
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="fauna" class="">Sin fauna</label>
+                  <div class="">
+                    <label for="fauna-si" class="">
+                      <input
+                        type="radio"
+                        name="fauna"
+                        class=""
+                        id="fauna-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="fauna-no" class="">
+                      <input
+                        type="radio"
+                        name="fauna"
+                        class=""
+                        id="fauna-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="tanquefl" class="">Tanque flameado</label>
+                  <div class="">
+                    <label for="tanquefl-si" class="">
+                      <input
+                        type="radio"
+                        name="tanquefl"
+                        class=""
+                        id="tanquefl-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="tanquefl-no" class="">
+                      <input
+                        type="radio"
+                        name="tanquefl"
+                        class=""
+                        id="tanquefl-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="tcortada" class="">Tierra cortada</label>
+                  <div class="">
+                    <label for="tcortada-si" class="">
+                      <input
+                        type="radio"
+                        name="tcortada"
+                        class=""
+                        id="tcortada-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="tcortada-no" class="">
+                      <input
+                        type="radio"
+                        name="tcortada"
+                        class=""
+                        id="tcortada-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo1">
+                  <label>Sin apartarrayo en alguna fase</label>
+                  <div class="">
+                    <label for="opcionSi2">
+                      <input
+                        type="radio"
+                        name="opcion2"
+                        value="Si"
+                        id="opcionSi2"
+                      />
+                      Sí</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="opcionNo2">
+                      <input
+                        type="radio"
+                        name="opcion2"
+                        value="No"
+                        id="opcionNo2"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo2">
+                  <label for="selectOpciones2">Seleccione fase</label>
+                  <select id="selectOpciones2" disabled>
+                    <option value="FA">FA</option>
+                    <option value="FB">FB</option>
+                    <option value="FC">FC</option>
+                  </select>
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="fcontacto" class="">Algun falso contacto</label>
+                  <div class="">
+                    <label for="fcontacto-si" class="">
+                      <input
+                        type="radio"
+                        name="fcontacto"
+                        class=""
+                        id="fcontacto-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="fcontacto-no" class="">
+                      <input
+                        type="radio"
+                        name="fcontacto"
+                        class=""
+                        id="fcontacto-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="impacto" class=""
+                    >Se observa algún impacto en est.</label
+                  >
+                  <div class="">
+                    <label for="impacto-si" class="">
+                      <input
+                        type="radio"
+                        name="impacto"
+                        class=""
+                        id="impacto-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="impacto-no" class="">
+                      <input
+                        type="radio"
+                        name="impacto"
+                        class=""
+                        id="impacto-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="brotas" class="">Boquillas rotas</label>
+                  <div class="">
+                    <label for="brotas-si" class="">
+                      <input
+                        type="radio"
+                        name="brotas"
+                        class=""
+                        id="brotas-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="brotas-no" class="">
+                      <input
+                        type="radio"
+                        name="brotas"
+                        class=""
+                        id="brotas-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="bflameadas" class="">Boquillas flameadas</label>
+                  <div class="">
+                    <label for="bflameadas-si" class="">
+                      <input
+                        type="radio"
+                        name="bflameadas"
+                        class=""
+                        id="bflameadas-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="bflameadas-no" class="">
+                      <input
+                        type="radio"
+                        name="bflameadas"
+                        class=""
+                        id="bflameadas-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="bflojas" class="">Boquillas flojas</label>
+                  <div class="">
+                    <label for="bflojas-si" class="">
+                      <input
+                        type="radio"
+                        name="bflojas"
+                        class=""
+                        id="bflojas-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="bflojas-no" class="">
+                      <input
+                        type="radio"
+                        name="bflojas"
+                        class=""
+                        id="bflojas-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="antifauna" class="">Antifauna defectuoso</label>
+                  <div class="">
+                    <label for="antifauna-si" class="">
+                      <input
+                        type="radio"
+                        name="antifauna"
+                        class=""
+                        id="antifauna-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="antifauna-no" class="">
+                      <input
+                        type="radio"
+                        name="antifauna"
+                        class=""
+                        id="antifauna-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="bajante" class="">Sin bajante</label>
+                  <div class="">
+                    <label for="bajante-si" class="">
+                      <input
+                        type="radio"
+                        name="bajante"
+                        class=""
+                        id="bajante-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="bajante-no" class="">
+                      <input
+                        type="radio"
+                        name="bajante"
+                        class=""
+                        id="bajante-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo3">
+                  <label>Resistencia de tierras</label>
+                  <div class="">
+                    <label for="opcionSi3">
+                      <input
+                        type="radio"
+                        name="opcion3"
+                        value="Si"
+                        id="opcionSi3"
+                      />
+                      si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="opcionNo3">
+                      <input
+                        type="radio"
+                        name="opcion3"
+                        value="No"
+                        id="opcionNo3"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                </div>
+                <!--Empieza insertar contenido-->
+                <div class="campo3">
+                  <label for="oms">Coloque resistencia Ohms</label>
+                  <input type="text" id="oms" disabled />
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo4">
+                  <label>Otros Especificar</label>
+                  <div class="">
+                    <label for="opcionSi4">
+                      <input
+                        type="radio"
+                        name="opcion4"
+                        value="Si"
+                        id="opcionSi4"
+                      />
+                      Sí</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="opcionNo4">
+                      <input
+                        type="radio"
+                        name="opcion4"
+                        value="No"
+                        id="opcionNo4"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza insertar contenido-->
+                <div class="campo4">
+                  <label for="esp">Especifique</label>
+                  <textarea class="input-text" id="esp" disabled></textarea>
+                </div>
+              </div>
+              <!--Termina seccion de introducir datos-->
+            </div>
+            <!-----------------------------------------------------------------------
+                -----------------------------------------------------------------------
+                ---------------------Seccion 5 del formulario-------------------------->
+            <div class="sec2">
+              <h3>Observaciones en el control</h3>
+              <!--Empieza seccion de introducir datos-->
+              <div class="contenedor-campos6">
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="dgab" class="">Defromación en gabinete</label>
+                  <div class="">
+                    <label for="dgab-si" class="">
+                      <input
+                        type="radio"
+                        name="dgab"
+                        class=""
+                        id="dgab-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="dgab-no" class="">
+                      <input
+                        type="radio"
+                        name="dgab"
+                        class=""
+                        id="dgab-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="ph" class="">Presencia de humedad</label>
+                  <div class="">
+                    <label for="ph-si" class="">
+                      <input
+                        type="radio"
+                        name="ph"
+                        class=""
+                        id="ph-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="ph-no" class="">
+                      <input
+                        type="radio"
+                        name="ph"
+                        class=""
+                        id="ph-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="pfauna" class=""
+                    >Presencia de fauna en interior</label
+                  >
+                  <div class="">
+                    <label for="pfauna-si" class="">
+                      <input
+                        type="radio"
+                        name="pfauna"
+                        class=""
+                        id="pfauna-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="pfauna-no" class="">
+                      <input
+                        type="radio"
+                        name="pfauna"
+                        class=""
+                        id="pfauna-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="van" class="">Se observa vandalismo</label>
+                  <div class="">
+                    <label for="van-si" class="">
+                      <input
+                        type="radio"
+                        name="van"
+                        class=""
+                        id="van-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="van-no" class="">
+                      <input
+                        type="radio"
+                        name="van"
+                        class=""
+                        id="van-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="ADP" class="">Tiene ADP de baja tensión</label>
+                  <div class="">
+                    <label for="ADP-si" class="">
+                      <input
+                        type="radio"
+                        name="ADP"
+                        class=""
+                        id="ADP-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="ADP-no" class="">
+                      <input
+                        type="radio"
+                        name="ADP"
+                        class=""
+                        id="ADP-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="flameados" class="">Elementos flameados</label>
+                  <div class="">
+                    <label for="flameados-si" class="">
+                      <input
+                        type="radio"
+                        name="flameados"
+                        class=""
+                        id="flameados-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="flameados-no" class="">
+                      <input
+                        type="radio"
+                        name="flameados"
+                        class=""
+                        id="flameados-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="gndcortada" class="">Tierra cortada</label>
+                  <div class="">
+                    <label for="gndcortada-si" class="">
+                      <input
+                        type="radio"
+                        name="gndcortada"
+                        class=""
+                        id="gndcortada-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="gndcortada-no" class="">
+                      <input
+                        type="radio"
+                        name="gndcortada"
+                        class=""
+                        id="gndcortada-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="falsoc" class="">Algún falso contacto</label>
+                  <div class="">
+                    <label for="falsoc-si" class="">
+                      <input
+                        type="radio"
+                        name="falsoc"
+                        class=""
+                        id="falsoc-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="falsoc-no" class="">
+                      <input
+                        type="radio"
+                        name="falsoc"
+                        class=""
+                        id="falsoc-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="imp" class="">Se observa algún impacto</label>
+                  <div class="">
+                    <label for="imp-si" class="">
+                      <input
+                        type="radio"
+                        name="imp"
+                        class=""
+                        id="imp-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="imp-no" class="">
+                      <input
+                        type="radio"
+                        name="imp"
+                        class=""
+                        id="imp-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="adañada" class="">Acometida dañada</label>
+                  <div class="">
+                    <label for="adañada-si" class="">
+                      <input
+                        type="radio"
+                        name="adañada"
+                        class=""
+                        id="adañada-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="adañada-no" class="">
+                      <input
+                        type="radio"
+                        name="adañada"
+                        class=""
+                        id="adañada-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="bflameadas2" class="">Boquillas flameadas</label>
+                  <div class="">
+                    <label for="bflameadas2-si" class="">
+                      <input
+                        type="radio"
+                        name="bflameadas2"
+                        class=""
+                        id="bflameadas2-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="bflameadas2-no" class="">
+                      <input
+                        type="radio"
+                        name="bflameadas2"
+                        class=""
+                        id="bflameadas2-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="bflojas2" class="">Boquillas flojas</label>
+                  <div class="">
+                    <label for="bflojas2-si" class="">
+                      <input
+                        type="radio"
+                        name="bflojas2"
+                        class=""
+                        id="bflojas2-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="bflojas2-no" class="">
+                      <input
+                        type="radio"
+                        name="bflojas2"
+                        class=""
+                        id="bflojas2-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo">
+                  <label for="antifauna2" class="">Antifauna defectuoso</label>
+                  <div class="">
+                    <label for="antifauna2-si" class="">
+                      <input
+                        type="radio"
+                        name="antifauna2"
+                        class=""
+                        id="antifauna2-si"
+                        value="1"
+                      />
+                      Si</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="antifauna2-no" class="">
+                      <input
+                        type="radio"
+                        name="antifauna2"
+                        class=""
+                        id="antifauna2-no"
+                        value="0"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza CONTENIDO de si/no-->
+                <div class="campo4">
+                  <label>Otros Especificar</label>
+                  <div class="">
+                    <label for="opcionSi5">
+                      <input
+                        type="radio"
+                        name="opcion5"
+                        value="Si"
+                        id="opcionSi5"
+                      />
+                      Sí</label
+                    >
+                  </div>
+                  <!--Termina seccion si-->
+                  <div class="">
+                    <label for="opcionNo5">
+                      <input
+                        type="radio"
+                        name="opcion5"
+                        value="No"
+                        id="opcionNo5"
+                        checked
+                      />
+                      No</label
+                    >
+                  </div>
+                  <!--termina seccion no-->
+                </div>
+                <!--Empieza insertar contenido-->
+                <div class="campo4">
+                  <label for="esp2">Especifique</label>
+                  <textarea class="input-text" id="esp2" disabled></textarea>
+                </div>
+              </div>
+              <!--Termina seccion de introducir datos-->
+            </div>
+            <!-----------------------------------------------------------------------
+                -----------------------------------------------------------------------
+                ---------------------Seccion 6 del formulario-------------------------->
+            <div class="sec2">
+              <h3>Datos reporte</h3>
+              <!--Empieza seccion de introducir datos-->
+              <div class="contenedor-campos7">
+                <!--Empieza insertar contenido-->
+                <div class="campo">
+                  <label for="fcom">Fecha compromiso</label>
+                  <input type="date" id="fcom" />
+                </div>
+                <div class="campo">
+                  <label for="reporto">Reportó</label>
+                  <input type="text" id="reporto" required />
+                </div>
+                <div class="campo">
+                  <label for="fechaf">Fecha</label>
+                  <input type="date" id="fechaf" />
+                </div>
+                <div class="campo">
+                  <label for="horaf">Hora</label>
+                  <input type="time" id="horaf" />
+                </div>
+                <div class="campo">
+                  <label for="recib">Recibe</label>
+                  <input type="text" id="recib" required />
+                </div>
+                <div class="campo">
+                  <label for="zona2">Zona del equipo reportado</label>
+                  <select id="zona2">
+                    <option value="">Seleccione una zona</option>
+                    <option value="misantla">Misantla</option>
+                    <option value="martinez">Martínez de la Torre</option>
+                    <option value="tlapacoyan">Tlapacoyan</option>
+                    <option value="teziutlan">Teziutlán</option>
+                    <option value="perote">Perote</option>
+                    <option value="zacapoaxtla">Zacapoaxtla</option>
+                    <option value="tzt">S.E. TZT</option>
+                    <option value="mtz">S.E. MTZ</option>
+                  </select>
+                </div>
+              </div>
+              <!--Termina seccion de introducir datos-->
+            </div>
+            <div>
+              <button type="submit" class="boton alinear-derecha">
+                Generar PDF
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
